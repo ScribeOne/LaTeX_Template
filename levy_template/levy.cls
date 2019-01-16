@@ -51,10 +51,11 @@
 }
 
 
-
 % Title
 \renewcommand{\maketitle}{
 	% \thispagestyle{empty}
+	
+	% Top Right, Student and Tutor names
 	\vspace*{-2cm}
 	\begin{flushright}
 		{\large \@students}
@@ -62,6 +63,7 @@
 		\ifthenelse{\equal{\@tutor}{null}}{}{Tutor: \@tutor}
 	\end{flushright}
 
+	% Top Left, Course and Semester
 	\vspace*{-1.35cm}
 	\begin{flushleft}
 		{\large \textbf{\@course}}
@@ -69,24 +71,36 @@
 		\@semester
 	\end{flushleft}
 	\par
+	
+	% Center with Main Title
 	\vspace{.7em}
-
 	\begin{center}
 	{\LARGE \textbf{ \@title}}
 	\end{center}
-
 	\vspace{1.5em}
 }
 
 
-% \task command with counter and style
-% 1 Argument: name
+% counters for task and subtask
 \newcounter{taskcounter}
 \setcounter{taskcounter}{0}
+\newcounter{subcounter}[taskcounter]
+\setcounter{subcounter}{0}
+
+
+% \task command 
+% 1 optional Argument: name
 \newcommand{\task}[1]{
 	\addtocounter{taskcounter}{1}
+	\setcounter{subcounter}{0}
 	\vspace{.8em}
 	\ifthenelse{\equal{#1}{}} 								% condition
 	{\large \textbf{Aufgabe \arabic{taskcounter}}}			% then
 	{\large \textbf{Aufgabe \arabic{taskcounter}: #1}}		% else
-	}
+}
+
+% \subtask command 
+\newcommand{\subtask}{
+	\addtocounter{subcounter}{1}	
+	\arabic{taskcounter}.\arabic{subcounter}	
+}

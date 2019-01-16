@@ -4,25 +4,30 @@
 \course{Grundlagen der Informatik}
 \students{John Doe, Max Mustermann}
 \semester{Wintersemester 2018/19}
+% \tutor{Real Klaus}
 
 
 
-\begin{document}
-	
+\begin{document}	
 \maketitle
 
 
-% task needs title as argument	
+
 \task{Make Coffee}
+
+\subtask
+
+
+
 
 \begin{enumerate}[label=(\alph*)]	
 	
 	\item 
-	Boil water
+	Boil water 
 	
 		
 	\item 
-	Put instant powder into cup
+	Put instant powder into cup 
 	
 	\item 
 	If water is boiled, pour water into cup
@@ -35,25 +40,67 @@
 	
 \end{enumerate}
 
+\subtask
 
+lorem ipsum
 
+\task{test}
 
-
-%\begin{enumerate}[label=(\alph*)]
-
-%\end{enumerate}
-
-
-%	\begin{description}
-%		\item[-] blabla
-%		\item[-] lorem ipsum
-%	\end{description}
-
-
-%\begin{figure}[h]
-%	\includegraphics[width=.35\textwidth]{aeroflix.jpg}
-%\end{figure}
-
+\subtask
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+\iffalse
+% ------- Useful Stuff ---------%
+
+
+% Include Images
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.35\textwidth]{rndImg.jpg}
+\end{figure}
+
+
+% cite without external file
+\newpage
+\begin{thebibliography}{9}
+	\bibitem{script}
+	Skript zur Vorlesung Grundlagen interaktiver Systeme
+	
+	\bibitem{cent} 
+	Centeye
+	\\\url{https://web.archive.org/web/20100417152147/http://www.centeye.com/pages/techres/opticflow.html} 
+	\\ 5.12.2018
+	
+	  \bibitem{Murray-vanRyper}James D. Murray, William vanRyper:
+	{\sl Graphics File Formats}. O'Reilly\&Associates, Inc.,
+	Sebastopol, CA, 1994.
+\end{thebibliography}
+
+
+% enum with a,b,c,... label for subtasks
+\begin{enumerate}[label=(\alph*)]
+	\item
+	\item
+\end{enumerate}
+
+
+% enum with custom bullet points 
+\begin{description}
+	\item[-] blabla
+	\item[-] lorem ipsum
+\end{description}
+
+
+\fi
